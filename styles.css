@@ -232,6 +232,47 @@ body {
   transform: translateY(-4px);
 }
 
+/* About */
+.about-inner {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  max-width: 860px;
+}
+
+.about-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
+.about-title {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  color: var(--fg-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .about-title {
+    text-align: center;
+  }
+}
+
 /* Contact */
 .contact-inner {
   text-align: center;
