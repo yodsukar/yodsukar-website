@@ -85,25 +85,8 @@ body {
 
 /* Hero */
 .hero {
-  padding: 108px 0 56px;
+  padding: 40px 0 56px;
   text-align: center;
-}
-
-.eyebrow {
-  color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  margin-bottom: 14px;
-}
-
-.hero-heading {
-  font-size: clamp(1.5rem, 3.2vw, 2.4rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin: 0 0 28px;
 }
 
 .hero-actions {
@@ -298,7 +281,7 @@ body {
 @media (max-width: 768px) {
   .nav { gap: 16px; }
   .nav a:not(.nav-cta) { display: none; }
-  .hero { padding: 88px 0 48px; }
+  .hero { padding: 24px 0 40px; }
   .grid-campaigns,
   .grid-shorts { grid-template-columns: 1fr; }
 }
