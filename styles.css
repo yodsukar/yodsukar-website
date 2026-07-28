@@ -175,9 +175,9 @@ body {
 }
 
 .video-frame-hero {
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--border);
 }
 
 .video-frame-vertical {
