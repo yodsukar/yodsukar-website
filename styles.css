@@ -85,16 +85,8 @@ body {
 
 /* Hero */
 .hero {
-  padding: 40px 0 56px;
+  padding: 40px 0;
   text-align: center;
-}
-
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 28px;
 }
 
 .btn {
