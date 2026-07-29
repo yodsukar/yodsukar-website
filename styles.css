@@ -1,10 +1,10 @@
 :root {
-  --bg: #0b0b0d;
-  --bg-alt: #111114;
-  --fg: #f5f5f7;
-  --fg-muted: #9a9aa2;
-  --accent: #ff5a3c;
-  --border: #232327;
+  --bg: #ffffff;
+  --bg-alt: #f5f5f6;
+  --fg: #14141a;
+  --fg-muted: #5e5e6b;
+  --accent: #c8371a;
+  --border: #e2e2e6;
   --container: 1160px;
   --display: "Oswald", "Helvetica Neue", Arial, sans-serif;
 }
@@ -33,7 +33,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(11, 11, 13, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -84,7 +84,7 @@ body {
 
 .nav-cta:hover {
   background: var(--accent);
-  color: #0b0b0d !important;
+  color: #fff !important;
 }
 
 /* Hero */
@@ -142,7 +142,7 @@ body {
 .btn-hero:hover {
   background: var(--accent);
   border-color: var(--accent);
-  color: #0b0b0d;
+  color: #fff;
 }
 
 /* Sections */
@@ -212,10 +212,10 @@ body {
 
 .btn-primary {
   background: var(--accent);
-  color: #0b0b0d;
+  color: #fff;
 }
 
-.btn-primary:hover { background: #ff7659; }
+.btn-primary:hover { background: #a82c13; }
 
 .btn-large {
   font-size: 0.95rem;
@@ -333,20 +333,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  border-radius: 4px;
-  padding: 18px 22px;
-  min-height: 96px;
+  padding: 16px 20px;
+  min-height: 80px;
 }
 
 .brands-grid img {
   max-width: 100%;
-  max-height: 56px;
+  max-height: 45px;
   width: auto;
   height: auto;
   object-fit: contain;
   filter: grayscale(1);
-  opacity: 0.75;
+  opacity: 0.7;
   transition: filter 0.25s ease, opacity 0.25s ease;
 }
 
