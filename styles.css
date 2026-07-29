@@ -303,6 +303,44 @@ body {
   margin-bottom: 0;
 }
 
+/* Brands */
+.brands {
+  margin-top: 72px;
+  padding-top: 56px;
+  border-top: 1px solid var(--border);
+}
+
+.brands-title {
+  font-family: var(--display);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0 0 36px;
+}
+
+.brands-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 28px 32px;
+}
+
+.brands-grid li {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+  transition: color 0.2s ease;
+}
+
+.brands-grid li:hover { color: var(--fg); }
+
 /* Contact */
 .contact-inner {
   text-align: center;
