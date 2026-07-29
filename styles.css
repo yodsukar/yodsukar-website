@@ -235,6 +235,12 @@ body {
   background: #000;
 }
 
+/* an odd final item would sit alone — let it run full width instead */
+.gallery-item:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  padding-top: 42%;
+}
+
 .gallery-item iframe {
   position: absolute;
   top: 0;
@@ -246,9 +252,9 @@ body {
 
 .shorts-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  max-width: 900px;
+  max-width: 1020px;
   margin: 0 auto;
 }
 
@@ -416,4 +422,8 @@ body {
   .gallery-grid,
   .shorts-grid { grid-template-columns: 1fr; }
   .shorts-item { padding-top: 177.77%; }
+  .gallery-item:last-child:nth-child(odd) {
+    grid-column: auto;
+    padding-top: 56.25%;
+  }
 }
