@@ -169,15 +169,6 @@ body {
   margin-bottom: 56px;
 }
 
-.section-head-right {
-  align-items: flex-end;
-  border-left: none;
-  border-right: 3px solid var(--accent);
-  padding-left: 0;
-  padding-right: 22px;
-  text-align: right;
-}
-
 .section-head-center {
   align-items: center;
   border-left: none;
@@ -246,6 +237,9 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 56px;
+  margin-top: 72px;
+  padding-top: 64px;
+  border-top: 1px solid var(--border);
 }
 
 .service {
@@ -267,8 +261,7 @@ body {
   color: var(--fg-muted);
   font-size: 1rem;
   line-height: 1.75;
-  margin: 0 0 28px;
-  flex-grow: 1;
+  margin: 0;
 }
 
 /* Gallery — edge to edge */
@@ -297,6 +290,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .shorts-item {
