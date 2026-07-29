@@ -325,21 +325,35 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 28px 32px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
 }
 
 .brands-grid li {
-  font-family: var(--display);
-  font-size: 1.15rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--fg-muted);
-  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 4px;
+  padding: 18px 22px;
+  min-height: 96px;
 }
 
-.brands-grid li:hover { color: var(--fg); }
+.brands-grid img {
+  max-width: 100%;
+  max-height: 56px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.75;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+
+.brands-grid li:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
 
 /* Contact */
 .contact-inner {
