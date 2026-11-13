@@ -1,61 +1,137 @@
-document.getElementById("year").textContent = new Date().getFullYear();
-
-function buildPlayer(id, extra) {
-  var frame = document.createElement("iframe");
-  frame.src =
-    "https://www.youtube-nocookie.com/embed/" +
-    id +
-    "?autoplay=1&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&color=white" +
-    (extra || "");
-  frame.allow =
-    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-  frame.allowFullscreen = true;
-  return frame;
-}
-
-// Portfolio posters stay static until clicked, then swap in the player.
-document.querySelectorAll(".video-facade").forEach(function (facade) {
-  facade.addEventListener("click", function () {
-    var frame = buildPlayer(facade.dataset.id);
-    frame.title = facade.getAttribute("aria-label") || "Video";
-    facade.replaceWith(frame);
-  });
-});
-
-// Hero reel opens in a lightbox instead of leaving the site.
 (function () {
-  var trigger = document.getElementById("play-reel");
-  var modal = document.getElementById("reel-modal");
-  if (!trigger || !modal) return;
+  var ALLOW =
+    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  var EMBED = "https://www.youtube-nocookie.com/embed/";
 
-  var stage = document.getElementById("reel-modal-video");
-  var lastFocus = null;
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-  function open(e) {
-    e.preventDefault();
-    lastFocus = document.activeElement;
-    var frame = buildPlayer(trigger.dataset.id);
-    frame.title = "Main Reel";
-    stage.appendChild(frame);
-    modal.hidden = false;
-    document.body.classList.add("modal-open");
-    modal.querySelector(".modal-close").focus();
+  function player(id, params, title) {
+    var frame = document.createElement("iframe");
+    frame.src = EMBED + id + "?" + params;
+    frame.title = title;
+    frame.allow = ALLOW;
+    frame.allowFullscreen = true;
+    return frame;
   }
 
-  function close() {
-    modal.hidden = true;
-    stage.innerHTML = "";
-    document.body.classList.remove("modal-open");
-    if (lastFocus) lastFocus.focus();
+  // Hero: silent looping reel behind the poster. Skipped for visitors who
+  // ask for less motion or less data; they keep the still poster instead.
+  var loop = document.getElementById("reel-loop");
+  var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var saveData = navigator.connection && navigator.connection.saveData;
+
+  function startLoop() {
+    if (!loop || calm || saveData || loop.firstChild) return;
+    var id = loop.dataset.loop;
+    var frame = player(
+      id,
+      "autoplay=1&mute=1&playsinline=1&loop=1&playlist=" +
+        id +
+        "&controls=0&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1",
+      "Reel preview"
+    );
+    frame.tabIndex = -1;
+    frame.setAttribute("aria-hidden", "true");
+    frame.addEventListener("load", function () {
+      // long enough for the player's start-up controls to fade on phones
+      setTimeout(function () {
+        loop.classList.add("ready");
+      }, 3600);
+    });
+    loop.appendChild(frame);
   }
 
-  trigger.addEventListener("click", open);
+  function stopLoop() {
+    if (!loop) return;
+    loop.classList.remove("ready");
+    loop.textContent = "";
+  }
 
-  modal.addEventListener("click", function (e) {
-    if (e.target.hasAttribute("data-close")) close();
-  });
+  startLoop();
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && !modal.hidden) close();
-  });
+  // Every video link plays in a lightbox. Without scripts the same links
+  // simply open the video on YouTube.
+  var box = document.getElementById("lightbox");
+  var stage = document.getElementById("lightbox-stage");
+
+  if (box && typeof box.showModal === "function") {
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest("[data-video]");
+      if (!link || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      stopLoop();
+      box.classList.toggle("is-vertical", link.hasAttribute("data-vertical"));
+      var client = link.querySelector(".client");
+      var title = link.querySelector(".title");
+      var label =
+        client && title
+          ? client.textContent + ": " + title.textContent
+          : link.getAttribute("aria-label") || link.textContent.trim().replace(/\s+/g, " ");
+      stage.appendChild(
+        player(
+          link.dataset.video,
+          "autoplay=1&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&color=white",
+          label
+        )
+      );
+      box.showModal();
+    });
+
+    document.getElementById("lightbox-close").addEventListener("click", function () {
+      box.close();
+    });
+
+    // a click on the dialog itself (not its contents) is a click on the backdrop
+    box.addEventListener("click", function (e) {
+      if (e.target === box) box.close();
+    });
+
+    box.addEventListener("close", function () {
+      stage.textContent = "";
+      startLoop();
+    });
+  }
+
+  // Copy email
+  var copy = document.getElementById("copy-email");
+  var status = document.getElementById("copy-status");
+
+  if (copy && navigator.clipboard) {
+    var original = copy.textContent;
+    copy.addEventListener("click", function () {
+      navigator.clipboard.writeText(copy.dataset.email).then(function () {
+        copy.textContent = "Copied";
+        status.textContent = "Email address copied";
+        setTimeout(function () {
+          copy.textContent = original;
+          status.textContent = "";
+        }, 2000);
+      });
+    });
+  } else if (copy) {
+    copy.hidden = true;
+  }
+
+  // Entrance on scroll
+  var items = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    var seen = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("in");
+          seen.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px" }
+    );
+    items.forEach(function (el) {
+      seen.observe(el);
+    });
+  } else {
+    items.forEach(function (el) {
+      el.classList.add("in");
+    });
+  }
 })();
