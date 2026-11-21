@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rich Yodsukar — Video Editor &amp; Motion Graphics</title>
+<title>Rich Yodsukar | Video Editor and Motion Designer</title>
 <meta name="description" content="Rich Yodsukar is a video editor with 15+ years across every stage of production: planning, shooting, editing, motion graphics, and delivery. Watch the reel and selected work.">
-<meta name="theme-color" content="#FAF7F2">
+<meta name="theme-color" content="#0D1D21">
+<meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://yodsukar.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yodsukar.com/">
-<meta property="og:title" content="Rich Yodsukar — Video Editor &amp; Motion Graphics">
+<meta property="og:title" content="Rich Yodsukar | Video Editor and Motion Designer">
 <meta property="og:description" content="15+ years across every stage of video production. Watch the reel and selected work.">
 <meta property="og:image" content="https://yodsukar.com/assets/thumbs/6VLBuP5SXd0.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=7">
 <script>document.documentElement.classList.add("js");</script>
 <script type="application/ld+json">
 {
@@ -36,55 +37,55 @@
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="#top" class="wordmark">Rich Yodsukar<span aria-hidden="true">.</span></a>
+    <a href="#top" class="wordmark">Rich Yodsukar</a>
     <nav class="nav" aria-label="Primary">
       <a href="#work" class="nav-link">Work</a>
       <a href="#about" class="nav-link">About</a>
-      <a href="#contact" class="btn btn-small">Get in touch</a>
+      <a href="#contact" class="btn btn-ghost btn-small">Get in touch</a>
     </nav>
   </div>
 </header>
 
 <main>
 
-  <section id="top" class="hero">
-    <div class="wrap hero-grid">
-
-      <div class="hero-copy">
-        <p class="hello">
-          <img src="assets/headshot-avatar.jpg" alt="" width="44" height="44">
-          <span>Hi, I&rsquo;m Rich Yodsukar</span>
-        </p>
-        <h1>A video editor telling stories that <em>create results.</em></h1>
-        <p class="lede">15+ years across every stage of video production, from planning and shooting to editing, motion graphics, and final delivery.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="https://youtu.be/6VLBuP5SXd0" data-video="6VLBuP5SXd0">
-            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
-            Watch the reel
+  <section id="top" class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="gate">
+        <div class="reel">
+          <img class="reel-poster" src="assets/thumbs/6VLBuP5SXd0.jpg" alt="" width="1280" height="720" fetchpriority="high">
+          <div class="reel-loop" id="reel-loop" data-loop="6VLBuP5SXd0"></div>
+          <button class="reel-pause" type="button" id="reel-pause" aria-pressed="false" hidden>
+            <svg class="icon icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg>
+            <svg class="icon icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+            <span class="sr-only">Pause the background preview</span>
+          </button>
+          <a class="reel-hit" href="https://youtu.be/6VLBuP5SXd0" data-video="6VLBuP5SXd0" data-title="2026 Reel" aria-label="Play the 2026 reel with sound">
+            <span class="reel-pill">
+              <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+              <span class="reel-pill-label">2026 reel</span>
+            </span>
           </a>
-          <a class="btn btn-ghost" href="mailto:rich.yodsukar@gmail.com">Email me</a>
         </div>
       </div>
 
-      <div class="reel">
-        <img class="reel-poster" src="assets/thumbs/6VLBuP5SXd0.jpg" alt="" width="1280" height="720">
-        <div class="reel-loop" id="reel-loop" data-loop="6VLBuP5SXd0"></div>
-        <a class="reel-hit" href="https://youtu.be/6VLBuP5SXd0" data-video="6VLBuP5SXd0" aria-label="Play the 2026 reel with sound">
-          <span class="reel-tag">2026 Reel</span>
-          <span class="reel-pill">
-            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
-            Play with sound
-          </span>
-        </a>
+      <div class="hero-row">
+        <h1 id="hero-title">A video editor telling stories that create results.</h1>
+        <div class="hero-side">
+          <p class="lede">Hi, I&rsquo;m Rich. 15+ years across every stage of video production, from planning and shooting to editing, motion graphics, and final delivery.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://youtu.be/6VLBuP5SXd0" data-video="6VLBuP5SXd0" data-title="2026 Reel">
+              <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+              Watch the reel
+            </a>
+            <a class="btn btn-ghost" href="mailto:rich.yodsukar@gmail.com">Email me</a>
+          </div>
+        </div>
       </div>
 
-    </div>
-
-    <div class="wrap">
       <dl class="glance">
         <div>
           <dt>Experience</dt>
-          <dd>15+ years in video production</dd>
+          <dd><span class="num">15+</span> years in video production</dd>
         </div>
         <div>
           <dt>What I do</dt>
@@ -98,173 +99,171 @@
     </div>
   </section>
 
-  <section class="brands" aria-labelledby="brands-title">
-    <div class="wrap">
-      <h2 class="eyebrow center" id="brands-title">Brands I&rsquo;ve worked with</h2>
-      <ul class="brands-grid">
-        <li><img src="assets/brands/disney.png?v=2" alt="Disney" loading="lazy"></li>
-        <li><img src="assets/brands/nasa.png" alt="NASA" loading="lazy"></li>
-        <li><img src="assets/brands/columbia-sportswear.png" alt="Columbia Sportswear" loading="lazy"></li>
-        <li><img src="assets/brands/prime-video.png" alt="Prime Video" loading="lazy"></li>
-        <li><img src="assets/brands/star-wars.png" alt="Star Wars" class="is-light" loading="lazy"></li>
-        <li><img src="assets/brands/doritos.png" alt="Doritos" loading="lazy"></li>
-        <li><img src="assets/brands/rei.png" alt="REI" loading="lazy"></li>
-        <li><img src="assets/brands/farmers-insurance.png" alt="Farmers Insurance" loading="lazy"></li>
-        <li><img src="assets/brands/own-network.png" alt="OWN Network" loading="lazy"></li>
-        <li><img src="assets/brands/people-magazine.png" alt="People Magazine" class="is-light" loading="lazy"></li>
-        <li><img src="assets/brands/sorel.png?v=2" alt="Sorel" loading="lazy"></li>
-        <li><img src="assets/brands/mountain-hardwear.png" alt="Mountain Hardwear" loading="lazy"></li>
-        <li><img src="assets/brands/prana.png" alt="Prana" loading="lazy"></li>
-        <li><img src="assets/brands/kiehls.png" alt="Kiehl&rsquo;s" loading="lazy"></li>
-        <li><img src="assets/brands/e-entertainment.png" alt="E! Entertainment" loading="lazy"></li>
-        <li><img src="assets/brands/michaels.png" alt="Michaels" loading="lazy"></li>
-        <li><img src="assets/brands/renewal-by-andersen.png?v=2" alt="Renewal by Andersen" class="is-tall" loading="lazy"></li>
-        <li><img src="assets/brands/david-tutera.png" alt="David Tutera" loading="lazy"></li>
-        <li><img src="assets/brands/human-access-project.png" alt="Human Access Project" loading="lazy"></li>
-        <li><img src="assets/brands/multnomah-county.svg" alt="Multnomah County" loading="lazy"></li>
-      </ul>
-    </div>
-  </section>
 
-  <section id="work" class="section">
+  <section id="work" class="section" aria-labelledby="work-title">
     <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Portfolio</p>
-        <h2>Selected work</h2>
+      <div class="section-head">
+        <h2 id="work-title">Selected work</h2>
         <p class="section-note">Pick any piece to play it right here.</p>
       </div>
 
       <div class="work-grid">
 
-        <a class="card feature reveal" href="https://youtu.be/VQ2kHJP2bXo" data-video="VQ2kHJP2bXo">
-          <span class="thumb"><img src="assets/thumbs/VQ2kHJP2bXo.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+        <a class="card feature" href="https://youtu.be/VQ2kHJP2bXo" data-video="VQ2kHJP2bXo">
+          <span class="thumb"><img src="assets/thumbs/VQ2kHJP2bXo.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
           <span class="meta"><span class="client">Fundy Designer</span><span class="title">Print Your Photos</span></span>
         </a>
 
-        <a class="card feature reveal" href="https://youtu.be/dw-rneR-e0I" data-video="dw-rneR-e0I">
-          <span class="thumb"><img src="assets/thumbs/dw-rneR-e0I.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+        <a class="card feature" href="https://youtu.be/dw-rneR-e0I" data-video="dw-rneR-e0I">
+          <span class="thumb"><img src="assets/thumbs/dw-rneR-e0I.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
           <span class="meta"><span class="client">Columbia Sportswear</span><span class="title">Omni-Shade Broad Spectrum: For Everyone Under the Sun</span></span>
         </a>
 
-        <a class="card reveal" href="https://youtu.be/8mKAf8Q-W-8" data-video="8mKAf8Q-W-8">
-          <span class="thumb"><img src="assets/thumbs/8mKAf8Q-W-8.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+        <a class="card" href="https://youtu.be/8mKAf8Q-W-8" data-video="8mKAf8Q-W-8">
+          <span class="thumb"><img src="assets/thumbs/8mKAf8Q-W-8.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
           <span class="meta"><span class="client">Columbia Sportswear</span><span class="title">Made for Outside: Sarah Hoefflin</span></span>
         </a>
 
-        <a class="card reveal" href="https://youtu.be/CuXej16sJp4" data-video="CuXej16sJp4">
-          <span class="thumb"><img src="assets/thumbs/CuXej16sJp4.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+        <a class="card" href="https://youtu.be/CuXej16sJp4" data-video="CuXej16sJp4">
+          <span class="thumb"><img src="assets/thumbs/CuXej16sJp4.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
           <span class="meta"><span class="client">Renewal by Andersen</span><span class="title">A Warranty That Has Your Back</span></span>
         </a>
 
-        <a class="card reveal" href="https://youtu.be/52CTM2vqmbM" data-video="52CTM2vqmbM">
-          <span class="thumb"><img class="zoom" src="assets/thumbs/52CTM2vqmbM.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+        <a class="card" href="https://youtu.be/52CTM2vqmbM" data-video="52CTM2vqmbM">
+          <span class="thumb"><img class="zoom" src="assets/thumbs/52CTM2vqmbM.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
           <span class="meta"><span class="client">Fundy Designer</span><span class="title">Be the Hero</span></span>
         </a>
 
-        <a class="card reveal" href="https://youtu.be/64FihIgyM4M" data-video="64FihIgyM4M">
-          <span class="thumb"><img src="assets/thumbs/64FihIgyM4M.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+        <a class="card" href="https://youtu.be/64FihIgyM4M" data-video="64FihIgyM4M">
+          <span class="thumb"><img src="assets/thumbs/64FihIgyM4M.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
           <span class="meta"><span class="client">Columbia Sportswear</span><span class="title">OutDry Technology</span></span>
         </a>
 
-        <a class="card reveal" href="https://youtu.be/X9b6rL-U4C4" data-video="X9b6rL-U4C4">
-          <span class="thumb"><img src="assets/thumbs/X9b6rL-U4C4.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+        <a class="card" href="https://youtu.be/X9b6rL-U4C4" data-video="X9b6rL-U4C4">
+          <span class="thumb"><img src="assets/thumbs/X9b6rL-U4C4.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
           <span class="meta"><span class="client">Columbia Sportswear</span><span class="title">Why I Fish: Cindy &ldquo;Sid&rdquo; Nguyen</span></span>
         </a>
 
-        <a class="card reveal" href="https://youtu.be/krVJm5ze7uw" data-video="krVJm5ze7uw">
-          <span class="thumb"><img src="assets/thumbs/krVJm5ze7uw.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+        <a class="card" href="https://youtu.be/krVJm5ze7uw" data-video="krVJm5ze7uw">
+          <span class="thumb"><img src="assets/thumbs/krVJm5ze7uw.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
           <span class="meta"><span class="client">Fundy Designer</span><span class="title">Half Done</span></span>
         </a>
 
-        <a class="card reveal" href="https://youtu.be/iyd8zUvOP9w" data-video="iyd8zUvOP9w">
-          <span class="thumb"><img src="assets/thumbs/iyd8zUvOP9w.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+        <a class="card" href="https://youtu.be/iyd8zUvOP9w" data-video="iyd8zUvOP9w">
+          <span class="thumb"><img src="assets/thumbs/iyd8zUvOP9w.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
           <span class="meta"><span class="client">Columbia Sportswear</span><span class="title">OutDry Extreme Mesh Technology</span></span>
         </a>
 
-        <a class="card reveal" href="https://youtu.be/r9026XcCzMs" data-video="r9026XcCzMs">
-          <span class="thumb"><img src="assets/thumbs/r9026XcCzMs.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+        <a class="card" href="https://youtu.be/r9026XcCzMs" data-video="r9026XcCzMs">
+          <span class="thumb"><img src="assets/thumbs/r9026XcCzMs.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
           <span class="meta"><span class="client">Fundy Designer</span><span class="title">Be the Hero</span></span>
         </a>
 
       </div>
 
-      <div class="shorts-grid">
-
-        <div class="shorts-intro reveal">
-          <p class="eyebrow">Short-form</p>
+      <div class="shorts">
+        <div class="shorts-intro">
           <h3>Vertical and social</h3>
-          <p>Fast-paced vertical content for paid and organic social.</p>
+          <p>Fast-paced vertical content for paid and organic social, made for Renewal by Andersen.</p>
         </div>
 
-        <a class="card vertical reveal" href="https://youtube.com/shorts/NWf63YcumM0" data-video="NWf63YcumM0" data-vertical>
-          <span class="thumb"><img src="assets/thumbs/NWf63YcumM0.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
-          <span class="meta"><span class="client">Renewal by Andersen</span><span class="title">Anniversary</span></span>
-        </a>
+        <div class="shorts-grid">
+          <a class="card vertical" href="https://youtube.com/shorts/NWf63YcumM0" data-video="NWf63YcumM0" data-vertical>
+            <span class="thumb"><img src="assets/thumbs/NWf63YcumM0.jpg" alt="" width="405" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+            <span class="meta"><span class="client">Renewal by Andersen</span><span class="title">Anniversary</span></span>
+          </a>
 
-        <a class="card vertical reveal" href="https://youtube.com/shorts/dCQaHVbfqP4" data-video="dCQaHVbfqP4" data-vertical>
-          <span class="thumb"><img src="assets/thumbs/dCQaHVbfqP4.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
-          <span class="meta"><span class="client">Renewal by Andersen</span><span class="title">24 Months</span></span>
-        </a>
+          <a class="card vertical" href="https://youtube.com/shorts/dCQaHVbfqP4" data-video="dCQaHVbfqP4" data-vertical>
+            <span class="thumb"><img src="assets/thumbs/dCQaHVbfqP4.jpg" alt="" width="405" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+            <span class="meta"><span class="client">Renewal by Andersen</span><span class="title">24 Months</span></span>
+          </a>
 
-        <a class="card vertical reveal" href="https://youtube.com/shorts/0cpQtxeBTX4" data-video="0cpQtxeBTX4" data-vertical>
-          <span class="thumb"><img src="assets/thumbs/0cpQtxeBTX4.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
-          <span class="meta"><span class="client">Renewal by Andersen</span><span class="title">BOGO 50</span></span>
-        </a>
-
+          <a class="card vertical" href="https://youtube.com/shorts/0cpQtxeBTX4" data-video="0cpQtxeBTX4" data-vertical>
+            <span class="thumb"><img src="assets/thumbs/0cpQtxeBTX4.jpg" alt="" width="405" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+            <span class="meta"><span class="client">Renewal by Andersen</span><span class="title">BOGO 50</span></span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="section section-tint">
+  <section class="brands" aria-labelledby="brands-title">
+    <div class="wrap">
+      <h2 class="brands-title" id="brands-title">Brands I&rsquo;ve worked with</h2>
+      <ul class="brands-grid">
+        <li><img src="assets/brands/disney.png?v=2" width="600" height="255" alt="Disney" loading="lazy"></li>
+        <li><img src="assets/brands/nasa.png?v=3" width="524" height="442" class="is-tall" alt="NASA" loading="lazy"></li>
+        <li><img src="assets/brands/columbia-sportswear.png" width="480" height="88" alt="Columbia Sportswear" loading="lazy"></li>
+        <li><img src="assets/brands/prime-video.png" width="466" height="150" alt="Prime Video" loading="lazy"></li>
+        <li><img src="assets/brands/star-wars.png" width="500" height="281" class="is-outline" alt="Star Wars" loading="lazy"></li>
+        <li><img src="assets/brands/doritos.png" width="596" height="495" class="is-tall" alt="Doritos" loading="lazy"></li>
+        <li><img src="assets/brands/rei.png" width="250" height="160" alt="REI" loading="lazy"></li>
+        <li><img src="assets/brands/farmers-insurance.png" width="249" height="132" alt="Farmers Insurance" loading="lazy"></li>
+        <li><img src="assets/brands/own-network.png" width="383" height="126" class="is-outline" alt="OWN Network" loading="lazy"></li>
+        <li><img src="assets/brands/people-magazine.png" width="330" height="137" class="is-outline" alt="People Magazine" loading="lazy"></li>
+        <li><img src="assets/brands/sorel.png?v=2" width="129" height="87" alt="Sorel" loading="lazy"></li>
+        <li><img src="assets/brands/mountain-hardwear.png" width="476" height="261" alt="Mountain Hardwear" loading="lazy"></li>
+        <li><img src="assets/brands/prana.png" width="250" height="187" alt="Prana" loading="lazy"></li>
+        <li><img src="assets/brands/kiehls.png" width="250" height="126" alt="Kiehl&rsquo;s" loading="lazy"></li>
+        <li><img src="assets/brands/e-entertainment.png" width="600" height="1903" alt="E! Entertainment" class="is-tall" loading="lazy"></li>
+        <li><img src="assets/brands/michaels.png" width="500" height="135" alt="Michaels" loading="lazy"></li>
+        <li><img src="assets/brands/renewal-by-andersen.png?v=2" width="600" height="696" alt="Renewal by Andersen" class="is-tall" loading="lazy"></li>
+        <li><img src="assets/brands/david-tutera.png" width="364" height="55" class="is-outline" alt="David Tutera" loading="lazy"></li>
+        <li><img src="assets/brands/human-access-project.png" width="250" height="246" alt="Human Access Project" class="is-tall" loading="lazy"></li>
+        <li><img src="assets/brands/multnomah-county.svg" width="400" height="124" alt="Multnomah County" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about" class="section about" aria-labelledby="about-title">
     <div class="wrap">
       <div class="about-grid">
-        <img class="about-photo reveal" src="assets/headshot-portrait.jpg" alt="Rich Yodsukar smiling outdoors" width="720" height="900" loading="lazy">
-        <div class="about-text reveal">
-          <p class="eyebrow">About</p>
-          <h2>About Rich</h2>
-          <p>I&rsquo;ve experienced every stage of video production throughout my 15+ years in the industry and that start-to-finish background breathes life into a rough idea.</p>
-          <p>From pre-production and planning, on-set work as a camera operator, director, and gaffer, and post-production in video editing and motion graphics, through to final delivery and distribution, the detail and precision never stops.</p>
+        <img class="about-photo" src="assets/headshot-portrait.jpg" alt="Rich Yodsukar smiling outdoors" width="720" height="900" loading="lazy">
+        <div class="about-text">
+          <h2 id="about-title">About Rich</h2>
+          <p>I&rsquo;ve experienced every stage of video production throughout my 15+ years in the industry, and that start-to-finish background breathes life into a rough idea.</p>
+          <p>From pre-production and planning, on-set work as a camera operator, director, and gaffer, and post-production in video editing and motion graphics, through to final delivery and distribution, the detail and precision never stop.</p>
           <p>Whether it&rsquo;s an end-to-end PR campaign, long-form brand and event storytelling, or fast-paced vertical content for paid and organic social, I love telling stories that create results.</p>
         </div>
       </div>
 
-      <ol class="pipeline reveal" aria-label="Where I work across a production">
-        <li>
-          <span class="step">01</span>
-          <h3>Pre-production</h3>
-          <p>Planning</p>
-        </li>
-        <li>
-          <span class="step">02</span>
-          <h3>On set</h3>
-          <p>Camera operator, director, gaffer</p>
-        </li>
-        <li>
-          <span class="step">03</span>
-          <h3>Post-production</h3>
-          <p>Video editing, motion graphics</p>
-        </li>
-        <li>
-          <span class="step">04</span>
-          <h3>Delivery</h3>
-          <p>Final delivery and distribution</p>
-        </li>
-      </ol>
+      <div class="track-wrap">
+        <h3 class="track-title">Where I work on a production</h3>
+        <ol class="track">
+          <li class="clip">
+            <span class="step">1</span>
+            <span class="clip-name">Pre-production</span>
+            <span class="clip-detail">Planning</span>
+          </li>
+          <li class="clip">
+            <span class="step">2</span>
+            <span class="clip-name">On set</span>
+            <span class="clip-detail">Camera operator, director, gaffer</span>
+          </li>
+          <li class="clip">
+            <span class="step">3</span>
+            <span class="clip-name">Post-production</span>
+            <span class="clip-detail">Video editing, motion graphics</span>
+          </li>
+          <li class="clip">
+            <span class="step">4</span>
+            <span class="clip-name">Delivery</span>
+            <span class="clip-detail">Final delivery and distribution</span>
+          </li>
+        </ol>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="contact" class="section contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <div class="contact-card reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Let&rsquo;s work together.</h2>
-        <p class="contact-copy">Have a project or a role in mind? Reach out and let&rsquo;s talk about it.</p>
-        <div class="actions center">
-          <a class="btn btn-primary btn-large" href="mailto:rich.yodsukar@gmail.com">rich.yodsukar@gmail.com</a>
-          <button class="btn btn-outline-light btn-large" type="button" id="copy-email" data-email="rich.yodsukar@gmail.com">Copy email</button>
-        </div>
-        <p class="sr-only" role="status" id="copy-status"></p>
+      <h2 class="contact-title" id="contact-title">Let&rsquo;s work together.</h2>
+      <p class="contact-copy">Have a project or a role in mind? Reach out and let&rsquo;s talk about it.</p>
+      <div class="actions">
+        <a class="btn btn-primary btn-large" href="mailto:rich.yodsukar@gmail.com">rich.yodsukar@gmail.com</a>
+        <button class="btn btn-ghost btn-large" type="button" id="copy-email" data-email="rich.yodsukar@gmail.com">Copy email</button>
       </div>
+      <p class="sr-only" role="status" id="copy-status"></p>
     </div>
   </section>
 
@@ -278,10 +277,16 @@
 </footer>
 
 <dialog class="lightbox" id="lightbox" aria-label="Video player">
-  <button class="lightbox-close" type="button" id="lightbox-close" aria-label="Close video">&times;</button>
+  <button class="lightbox-close" type="button" id="lightbox-close" aria-label="Close video">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
+  </button>
   <div class="lightbox-stage" id="lightbox-stage"></div>
+  <div class="lightbox-caption">
+    <p id="lightbox-title"></p>
+    <a id="lightbox-yt" href="#" target="_blank" rel="noopener">Open on YouTube</a>
+  </div>
 </dialog>
 
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>

@@ -47,7 +47,23 @@
     loop.textContent = "";
   }
 
+  // Pause control for the silent loop (anything moving > 5 s needs one)
+  var pause = document.getElementById("reel-pause");
+  var userPaused = false;
+  var pauseLabel = pause && pause.querySelector(".sr-only");
+
   startLoop();
+
+  if (pause && loop && loop.firstChild) {
+    pause.hidden = false;
+    pause.addEventListener("click", function () {
+      userPaused = !userPaused;
+      pause.setAttribute("aria-pressed", String(userPaused));
+      pauseLabel.textContent = userPaused ? "Play the background preview" : "Pause the background preview";
+      if (userPaused) stopLoop();
+      else startLoop();
+    });
+  }
 
   // Every video link plays in a lightbox. Without scripts the same links
   // simply open the video on YouTube.
@@ -64,9 +80,10 @@
       var client = link.querySelector(".client");
       var title = link.querySelector(".title");
       var label =
-        client && title
+        link.dataset.title ||
+        (client && title
           ? client.textContent + ": " + title.textContent
-          : link.getAttribute("aria-label") || link.textContent.trim().replace(/\s+/g, " ");
+          : link.getAttribute("aria-label") || link.textContent.trim().replace(/\s+/g, " "));
       stage.appendChild(
         player(
           link.dataset.video,
@@ -74,6 +91,8 @@
           label
         )
       );
+      document.getElementById("lightbox-title").textContent = label;
+      document.getElementById("lightbox-yt").href = link.href;
       box.showModal();
     });
 
@@ -88,7 +107,7 @@
 
     box.addEventListener("close", function () {
       stage.textContent = "";
-      startLoop();
+      if (!userPaused) startLoop();
     });
   }
 
@@ -99,39 +118,31 @@
   if (copy && navigator.clipboard) {
     var original = copy.textContent;
     copy.addEventListener("click", function () {
-      navigator.clipboard.writeText(copy.dataset.email).then(function () {
-        copy.textContent = "Copied";
-        status.textContent = "Email address copied";
-        setTimeout(function () {
-          copy.textContent = original;
-          status.textContent = "";
-        }, 2000);
-      });
+      navigator.clipboard.writeText(copy.dataset.email).then(
+        function () {
+          copy.textContent = "Copied";
+          status.textContent = "Email address copied";
+          setTimeout(function () {
+            copy.textContent = original;
+            status.textContent = "";
+          }, 2000);
+        },
+        function () {
+          status.textContent = "Couldn't copy. The address is " + copy.dataset.email;
+        }
+      );
     });
   } else if (copy) {
     copy.hidden = true;
   }
 
-  // Entrance on scroll
-  var items = document.querySelectorAll(".reveal");
-
-  if ("IntersectionObserver" in window) {
-    var seen = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("in");
-          seen.unobserve(entry.target);
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px" }
-    );
-    items.forEach(function (el) {
-      seen.observe(el);
-    });
-  } else {
-    items.forEach(function (el) {
-      el.classList.add("in");
-    });
+  // Header gets a hairline once the page scrolls
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var onScroll = function () {
+      header.classList.toggle("scrolled", window.scrollY > 8);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
   }
 })();
