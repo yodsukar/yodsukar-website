@@ -154,6 +154,7 @@ button {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.2;
+  white-space: nowrap;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -902,15 +903,29 @@ h1 {
   .section { padding: 72px 0; }
   .contact { padding: 88px 0; }
   .nav-link[href="#about"] { display: none; }
-  .nav-link { padding: 0 10px; }
+  .nav-link { padding: 0 8px; }
+  .nav { gap: 0; }
+  .nav .btn { margin-left: 6px; padding: 10px 14px; }
   .reel { aspect-ratio: 2 / 1; }
   .gate { padding: 14px 0; }
   .vertical .client { display: none; }
 }
 
+@media (max-width: 460px) {
+  .nav-link[href="#work"] { display: none; }
+}
+
+@media (max-width: 350px) {
+  .wordmark { font-size: 1.15rem; }
+  .nav-link { padding: 0 6px; }
+  .nav .btn { padding: 10px 10px; font-size: 0.875rem; margin-left: 2px; }
+  .header-inner { gap: 6px; }
+  .wordmark { font-size: 1.05rem; }
+}
+
 @media (max-width: 400px) {
   :root { --gutter: 16px; }
-  .wordmark { font-size: 1.3rem; }
+  .wordmark { font-size: 1.25rem; }
   .btn-large { width: 100%; }
 }
 

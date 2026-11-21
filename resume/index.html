@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rich Yodsukar | Resume</title>
+<meta name="description" content="Rich Yodsukar: senior video editor and motion designer with 15+ years cutting brand campaigns, social, and product stories.">
+<link rel="canonical" href="https://yodsukar.com/resume/">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=2">
+<meta name="theme-color" content="#E7EBEC">
+<link rel="preload" href="fonts/Archivo-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Archivo-Cond-800.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="color-scheme" content="light">
+<style>
+/* static instances of Archivo (OFL), cut with fontTools so the PDF embeds real TrueType, not Type3 */
+@font-face { font-family: "Archivo"; src: url("fonts/Archivo-400.woff2") format("woff2"); font-weight: 400; font-stretch: 100%; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("fonts/Archivo-500.woff2") format("woff2"); font-weight: 500; font-stretch: 100%; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("fonts/Archivo-600.woff2") format("woff2"); font-weight: 600; font-stretch: 100%; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("fonts/Archivo-700.woff2") format("woff2"); font-weight: 700; font-stretch: 100%; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("fonts/Archivo-Cond-700.woff2") format("woff2"); font-weight: 700; font-stretch: 68%; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("fonts/Archivo-Cond-800.woff2") format("woff2"); font-weight: 800; font-stretch: 68%; font-display: swap; }
+:root {
+  --paper: #ffffff;
+  --ink: #0d1d21;
+  --ink-2: #3d4c50;
+  --rule: #c9d2d4;
+  --tally: #f2b33d;
+  --teal: #1f5a63;
+  --font: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: #e7ebec;
+  -webkit-text-size-adjust: 100%;
+  accent-color: var(--teal);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-stretch: 100%;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--tally); color: var(--ink); }
+
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
+h1, h2, h3 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
+a, button { touch-action: manipulation; }
+
+a {
+  color: var(--teal);
+  text-underline-offset: 0.18em;
+}
+
+a:hover { color: var(--ink); }
+
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.toolbar {
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ink);
+  font-weight: 500;
+  gap: 6px;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+.back:hover { text-decoration: underline; }
+
+.back svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover { background: var(--teal); color: #fff; }
+
+.btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* the sheet */
+.sheet {
+  max-width: 8.5in;
+  margin: 0 auto 40px;
+  background: var(--paper);
+  padding: 48px 48px 40px;
+  box-shadow: 0 1px 2px rgba(13, 29, 33, 0.08), 0 12px 32px -12px rgba(13, 29, 33, 0.25);
+}
+
+/* header */
+.head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 32px;
+  align-items: end;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.name {
+  font-stretch: 68%;
+  font-weight: 800;
+  font-size: 58px;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+
+.name::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 6px;
+  margin-top: 12px;
+  background: var(--tally);
+}
+
+.role {
+  grid-column: 1;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink-2);
+  max-width: 46ch;
+}
+
+.contact {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  list-style: none;
+  padding: 0;
+  text-align: right;
+  font-size: 15px;
+  line-height: 1.7;
+  font-variant-numeric: tabular-nums;
+}
+
+.contact a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.contact a:hover { color: var(--teal); text-decoration: underline; }
+
+/* body grid */
+.cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: 40px;
+  margin-top: 24px;
+}
+
+h2 {
+  font-stretch: 68%;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+
+.side section + section { margin-top: 26px; }
+
+/* experience timeline: dates | track | job */
+.jobs {
+  list-style: none;
+  padding: 0;
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 0 14px;
+}
+
+/* timeline track + one marker per job, drawn as backgrounds (no positioning: positioned boxes
+   would be painted, and so written into the PDF text layer, after the sidebar) */
+.what {
+  --d: 9px;          /* marker diameter */
+  --pad: 20px;       /* track to text */
+  --top: 11px;       /* where the track starts */
+  padding: 0 0 20px var(--pad);
+  background: linear-gradient(var(--rule), var(--rule)) no-repeat calc(var(--d) / 2 - 0.5px) var(--top) / 1px 100%;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* the marker: an inline circle pulled back over the track (vector in the PDF, and no positioning,
+   so the text order stays name, contact, experience, sidebar) */
+.what h3::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  width: var(--d);
+  height: var(--d);
+  margin: 0 calc(var(--pad) - var(--d)) 0 calc(var(--pad) * -1);
+  border: 1.5px solid var(--ink-2);
+  border-radius: 50%;
+  background: var(--paper);
+  vertical-align: 0.08em;
+}
+
+.job:last-child .what { padding-bottom: 0; }
+
+.job.current .what h3::before { background: var(--tally); border-color: var(--tally); }
+
+
+.when {
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.35;
+  padding-top: 1px;
+}
+
+.what h3 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.org {
+  font-size: 15px;
+  color: var(--ink-2);
+  margin-top: 1px;
+}
+
+.what ul {
+  list-style: disc;
+  padding-left: 1.05em;
+  margin-top: 8px;
+}
+
+.what li + li { margin-top: 5px; }
+
+.what li::marker { color: var(--ink-2); }
+
+.about p { color: var(--ink); }
+
+.skills {
+  display: grid;
+  gap: 12px;
+}
+
+.skills dt {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.skills dd {
+  text-wrap: pretty;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.brands {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 500;
+}
+
+.brands li:not(:last-child)::after {
+  content: "\00B7";
+  margin: 0 0.4em;
+  color: var(--ink-2);
+}
+
+.talks {
+  list-style: none;
+  padding: 0;
+}
+
+.talks li + li { margin-top: 10px; }
+
+.talks strong { font-weight: 600; }
+
+.talks span { color: var(--ink-2); }
+
+.edu h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.edu p { color: var(--ink-2); font-size: 15px; }
+
+.edu .note { font-size: 14px; margin-top: 4px; }
+
+.num { font-variant-numeric: tabular-nums; }
+
+/* phone */
+@media screen and (max-width: 760px) {
+  .toolbar { padding: 12px 16px; gap: 12px; }
+  .sheet { padding: 28px 20px 32px; margin-bottom: 0; box-shadow: none; }
+  .head { grid-template-columns: 1fr; }
+  .name { font-size: 48px; }
+  .contact { grid-column: 1; grid-row: auto; text-align: left; margin-top: 8px; display: flex; flex-wrap: wrap; column-gap: 20px; }
+  .contact a { display: inline-flex; align-items: center; min-height: 44px; }
+  .contact li { line-height: 1.2; }
+  .cols { grid-template-columns: 1fr; gap: 32px; }
+  .job { grid-template-columns: 1fr; }
+  .when { padding-left: 20px; }
+  .when { margin-bottom: 2px; }
+}
+
+/* print: one US Letter page */
+@page {
+  size: letter;
+  margin: 0.4in 0.45in;
+}
+
+@media print {
+  html, body { background: #fff; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-size: 9pt; line-height: 1.34; }
+  .toolbar { display: none; }
+  .sheet { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  .head { padding-bottom: 10pt; gap: 4pt 24pt; }
+  .name { font-size: 40pt; }
+  .name::after { width: 40pt; height: 4pt; margin-top: 7pt; }
+  .role { font-size: 10.5pt; }
+  .contact { font-size: 9pt; line-height: 1.55; }
+  .cols { margin-top: 11pt; gap: 20pt; grid-template-columns: minmax(0, 2.15fr) minmax(0, 1fr); }
+  h2 { font-size: 15pt; margin-bottom: 8pt; }
+  .side section + section { margin-top: 15pt; }
+  .job { grid-template-columns: 54pt minmax(0, 1fr); gap: 0 6pt; }
+  .what { --d: 7pt; --pad: 13pt; --top: 6.5pt; padding: 0 0 10pt var(--pad); }
+  .when { font-size: 8.6pt; }
+  .what h3 { font-size: 10.4pt; }
+  .org { font-size: 8.9pt; }
+  .what ul { margin-top: 4pt; }
+  .what li + li { margin-top: 1.5pt; }
+  .skills { gap: 6pt; }
+  .skills dt, .skills dd, .edu p { font-size: 9pt; }
+  .talks li + li { margin-top: 5pt; }
+  .edu h3 { font-size: 9.2pt; }
+  .edu .note { font-size: 8.6pt; }
+  a { color: var(--ink); text-decoration: none; }
+  .job, .side section { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a class="back" href="../"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>Reel and work</a>
+  <a class="btn" href="Rich-Yodsukar-Resume.pdf" download>
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M3 14h10"/></svg>
+    Download PDF
+  </a>
+</div>
+
+<main class="sheet">
+
+  <header class="head">
+    <h1 class="name">Rich Yodsukar</h1>
+    <p class="role">Senior Video Editor / Motion Designer &mdash; brand campaigns, social, and product storytelling that drives results</p>
+    <ul class="contact" aria-label="Contact">
+      <li><a href="mailto:rich.yodsukar@gmail.com">rich.yodsukar@gmail.com</a></li>
+      <li><a href="https://yodsukar.com">yodsukar.com</a></li>
+    </ul>
+  </header>
+
+  <div class="cols">
+
+    <section class="main" aria-labelledby="exp">
+      <h2 id="exp">Experience</h2>
+      <ol class="jobs">
+        <li class="job current">
+          <p class="when">2024–Present</p>
+          <div class="what">
+            <h3>Senior Video Editor / Motion Designer</h3>
+            <p class="org">Renewal by Andersen</p>
+            <ul>
+              <li>Edit video for paid advertising and internal productions, plus static and motion assets in After Effects and Premiere for lead-gen and conversion campaigns.</li>
+              <li>Helped cut content production costs from 30% to 20% of total marketing spend in one year by producing video and motion in-house.</li>
+              <li>Build storyboards and assets for email, paid social, and web alongside the performance-marketing team.</li>
+              <li>Integrate AI-assisted workflows (Adobe Firefly, Runway) into editing pipelines for generative video, with ongoing hands-on testing of emerging gen-AI tools.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="when">2019–2025</p>
+          <div class="what">
+            <h3>Video Editor</h3>
+            <p class="org">Columbia Sportswear</p>
+            <ul>
+              <li>Led editing of thousands of finished product videos for the e-commerce site at a $3B+ global retail brand, across social, email, digital, and in-store.</li>
+              <li>Edited and produced video, plus motion and static assets, for paid advertising and internal campaigns.</li>
+              <li>Built and maintained editing SOPs and digital-asset workflows during a video-team rebuild, organizing content across the brand&rsquo;s content management systems.</li>
+              <li>Deep command of industry-standard codecs and delivery specs (H.264, H.265/HEVC, ProRes) and platform-specific exports across Meta, email, digital, and in-store.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="when">2015–2020</p>
+          <div class="what">
+            <h3>Founder / Lead Editor &amp; Cinematographer</h3>
+            <p class="org">Stumptown Media Group</p>
+            <ul>
+              <li>Edited and directed photo and video campaigns for clients including Disney, NASA, Prime Video, Star Wars, and Doritos, alongside REI, Sorel, Mountain Hardwear, Prana, and Kiehl&rsquo;s.</li>
+              <li>Led post-production end to end: editing, motion graphics, color, and delivery across competing client deadlines.</li>
+              <li>Directed on-camera, documentary-style interviews, building rapport on set to capture authentic, usable footage.</li>
+              <li>Built Cocast, a live-streaming media product and division of the studio, ahead of mainstream adoption.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="when">2009–2015</p>
+          <div class="what">
+            <h3>Founder / Lead Editor &amp; Cinematographer</h3>
+            <p class="org">The Yodsukars</p>
+            <ul>
+              <li>Shot, edited, and directed productions for clients including E!, David Tutera, Michaels, and Farmers Insurance, from concept through final delivery.</li>
+              <li>Led post-production, managing editors and designers to deliver premium photo and video assets.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <aside class="side">
+
+      <section class="about" aria-labelledby="about">
+        <h2 id="about">About me</h2>
+        <p>Senior editor and motion designer with 15+ years cutting brand campaigns, social, and product stories for Disney, NASA, Prime Video, and Columbia Sportswear. Equally at home in Premiere and After Effects, building retention-first edits, motion graphics, and AI-assisted workflows. After years running production, focused back on the craft I love most: editing that drives results.</p>
+      </section>
+
+      <section aria-labelledby="brands">
+        <h2 id="brands">Select brands</h2>
+        <ul class="brands"><li>Disney</li><li>NASA</li><li>Prime Video</li><li>Star Wars</li><li>Doritos</li><li>REI</li><li>Columbia Sportswear</li><li>Kiehl&rsquo;s</li><li>E!</li><li>Farmers Insurance</li></ul>
+      </section>
+
+      <section aria-labelledby="skills">
+        <h2 id="skills">Skills and software</h2>
+        <dl class="skills">
+          <div>
+            <dt>Post-production</dt>
+            <dd>Adobe Premiere Pro, After Effects</dd>
+          </div>
+          <div>
+            <dt>Motion &amp; design</dt>
+            <dd>Motion graphics, typography, titling</dd>
+          </div>
+          <div>
+            <dt>Production</dt>
+            <dd>Camera operation, lighting, production logistics</dd>
+          </div>
+          <div>
+            <dt>Audio</dt>
+            <dd>Field recording, mixing, live production</dd>
+          </div>
+          <div>
+            <dt>Generative AI</dt>
+            <dd>Adobe Firefly, Runway</dd>
+          </div>
+          <div>
+            <dt>Delivery</dt>
+            <dd>H.264, H.265/HEVC, ProRes; Meta, email, digital, in-store specs</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="edu" aria-labelledby="edu">
+        <h2 id="edu">Education</h2>
+        <h3>California State University, Long Beach</h3>
+        <p>B.A., <span class="num">2001–2005</span></p>
+        <p class="note">15+ years of professional video/photo production in lieu of a film-specific degree.</p>
+      </section>
+
+    </aside>
+  </div>
+</main>
+
+</body>
+</html>
