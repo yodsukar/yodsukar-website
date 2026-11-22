@@ -386,7 +386,7 @@ button {
 }
 
 h1 {
-  font-size: clamp(3rem, 6.2vw, 5.25rem);
+  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
   line-height: 0.9;
 }
 
@@ -395,6 +395,27 @@ h1 {
   line-height: 1.5;
   color: var(--muted);
   max-width: 36ch;
+}
+
+.availability {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--body-text);
+  max-width: 40ch;
+}
+
+.tally-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--tally);
+  box-shadow: 0 0 0 3px rgba(242, 179, 61, 0.18);
+  transform: translateY(-1px);
 }
 
 .hero-side .actions { margin-top: 24px; }
@@ -740,7 +761,7 @@ h1 {
   font-size: 1.25rem;
   color: var(--muted);
   margin: 28px 0 32px;
-  max-width: 44ch;
+  max-width: 52ch;
 }
 
 /* Footer */
